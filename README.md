@@ -51,14 +51,12 @@ $ npm run test:cov
 
 ## 二次开发
 
-相应的二次开发需要的一些简要文档会列举在这里, 多数搬运来自于nestjs的文档
+相应的二次开发需要的一些简要文档会列举在这里, 多数搬运来自于[nestjs的文档](https://docs.nestjs.cn/)
 
 ### 生成文件
 
 ```bash
 $nest g controller cats
 ```
-
-
 
 > The Hobbit 中 Solin Oak Shield 有一块橡木盾, 但我想要个橡木种子(Oak Seed)

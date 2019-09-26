@@ -1,9 +1,14 @@
 import { Controller, Get, Post, Delete, Put, Param, Query, Body } from '@nestjs/common';
-import { QueryDto } from '../common/query.dto'
-import { UserDto } from './user.dto'
+import { QueryDto } from '../common/query.dto';
+import { UserDto } from './user.dto';
+import { UserEntity } from './user.entity';
+import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
+
+    constructor(private readonly userService: UserService) { }
+
     @Get(':id')
     detail(@Param('id') id: string): string {
         return `id: ${id}`;
@@ -14,13 +19,13 @@ export class UserController {
     }
 
     @Post()
-    add(@Body() user: UserDto): string {
-        return `name: ${user.name}, password: ${user.password}`;
+    add(@Body() user: UserDto): UserEntity {
+        return this.userService.add(user);
     }
 
     @Put(':id')
-    update(@Param('id') id: string, @Body() user: UserDto): string {
-        return `id: ${id}, name: ${user.name}, password: ${user.password}`;
+    update(@Param('id') id: string, @Body() user: UserDto): UserEntity {
+        return this.userService.update(id, user);
     }
 
     @Delete(':id')
