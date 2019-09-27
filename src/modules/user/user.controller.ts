@@ -1,9 +1,11 @@
 import { Controller, Get, Post, Delete, Put, Param, Query, Body } from '@nestjs/common';
-import { QueryDto } from '../common/query.dto';
-import { UserDto } from './user.dto';
-import { UserEntity } from './user.entity';
+import { QueryDto } from '../../common/query.dto';
+import { UserDto } from './dto/user.dto';
+import { UserEntity } from '../../entity/user.entity';
 import { UserService } from './user.service';
+import { ApiUseTags } from '@nestjs/swagger';
 
+@ApiUseTags('user')
 @Controller('user')
 export class UserController {
 

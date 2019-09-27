@@ -5,7 +5,7 @@ oak-seed 是一个以nestjs为基础的整合快速开发框架, 目标为开箱
 ## 整合列表
 
 * [X] Swagger
-* [ ] TypeORM
+* [X] TypeORM
 * [ ] JWT
 * [ ] GraphQL
 
